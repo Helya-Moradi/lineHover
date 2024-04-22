@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+:root{
+    --text: #2B3044;
+    --line: #BBC1E1;
+    --line-active: #275EFE;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #F6F8FF;
+    font-family: "Inter",Arial;
+}
+
+p{
+    font-size: 18px;
+    color: var(--text);
+    margin: 0;
+}
+
+p a{
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    margin: var(--spacing,0);
+    transition: margin .2s;
+}
+
+p a:hover{
+    --spacing:4px;
+    --stroke:var(--line-active);
+    --stroke-delay:.1s;
+    --offset:180px;
+}
+
+p a svg{
+    width: 76px;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 7px) translateZ(0);
+    fill:none;
+    stroke: var(--stroke,var(--line));
+    stroke-linecap: round;
+    stroke-width: 2px;
+    stroke-dasharray: var(--offset,69px) 278px;
+    stroke-dashoffset: 361px;
+    transition: stroke .25s ease var(--stroke-delay,0s), stroke-dasharray .35s;
+}
